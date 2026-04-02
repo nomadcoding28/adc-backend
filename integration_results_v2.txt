@@ -1,0 +1,35 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.12.3, pytest-8.3.3, pluggy-1.6.0 -- C:\work\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\work\backend
+configfile: pyproject.toml
+plugins: anyio-4.13.0, asyncio-0.24.0, cov-5.0.0, mock-3.14.0
+asyncio: mode=Mode.STRICT, default_loop_scope=function
+collecting ... collected 24 items
+
+tests/integration/test_api_alerts.py::TestAlertEndpoints::test_list_alerts PASSED [  4%]
+tests/integration/test_api_alerts.py::TestAlertEndpoints::test_list_alerts_filter_severity PASSED [  8%]
+tests/integration/test_api_alerts.py::TestAlertEndpoints::test_get_single_alert PASSED [ 12%]
+tests/integration/test_api_alerts.py::TestAlertEndpoints::test_get_missing_alert_returns_404 PASSED [ 16%]
+tests/integration/test_api_alerts.py::TestAlertEndpoints::test_acknowledge_alert PASSED [ 20%]
+tests/integration/test_api_alerts.py::TestAlertEndpoints::test_alert_stats PASSED [ 25%]
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_get_training_status PASSED [ 29%]
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_get_training_config PASSED [ 33%]
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_start_training_returns_task PASSED [ 37%]
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_stop_training_when_not_running PASSED [ 41%]
+tests/integration/test_api_ws.py::TestWebSocketEndpoints::test_alerts_ws_connect PASSED [ 45%]
+tests/integration/test_api_ws.py::TestWebSocketEndpoints::test_ws_ping_pong PASSED [ 50%]
+tests/integration/test_cyborg_env.py::TestCybORGWrapper::test_observation_shape PASSED [ 54%]
+tests/integration/test_cyborg_env.py::TestCybORGWrapper::test_observation_dtype PASSED [ 58%]
+tests/integration/test_cyborg_env.py::TestCybORGWrapper::test_action_space_size PASSED [ 62%]
+tests/integration/test_cyborg_env.py::TestCybORGWrapper::test_step_returns_correct_signature PASSED [ 66%]
+tests/integration/test_cyborg_env.py::TestCybORGWrapper::test_reset_returns_obs_and_info PASSED [ 70%]
+tests/integration/test_cyborg_env.py::TestCybORGWrapper::test_close_is_callable PASSED [ 75%]
+tests/integration/test_cyborg_env.py::TestCybORGWrapper::test_rewards_are_bounded PASSED [ 79%]
+tests/integration/test_full_pipeline.py::TestFullPipeline::test_agent_step_triggers_drift_check PASSED [ 83%]
+tests/integration/test_full_pipeline.py::TestFullPipeline::test_drift_triggers_ewc_registration PASSED [ 87%]
+tests/integration/test_full_pipeline.py::TestFullPipeline::test_observation_processor_decodes PASSED [ 91%]
+tests/integration/test_full_pipeline.py::TestFullPipeline::test_action_to_explanation_flow PASSED [ 95%]
+tests/integration/test_full_pipeline.py::TestFullPipeline::test_game_belief_update_flow PASSED [100%]
+
+======================= 24 passed in 101.16s (0:01:41) ========================

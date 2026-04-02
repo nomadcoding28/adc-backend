@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "C:\work\backend\test_init.py", line 13, in <module>
+    env = make_env(config, n_envs=1)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\backend\envs\env_factory.py", line 77, in make_env
+    return CybORGWrapper(env_cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\backend\envs\cyborg_wrapper.py", line 116, in __init__
+    self._cyborg = self._loader.load(
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\work\backend\envs\scenario_loader.py", line 137, in load
+    return self._instantiate_cyborg(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\backend\envs\scenario_loader.py", line 252, in _instantiate_cyborg
+    return self._load_cyborg_v2(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\backend\envs\scenario_loader.py", line 300, in _load_cyborg_v2
+    Path(_cyborg_pkg.__file__).parent
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\pathlib.py", line 1162, in __init__
+    super().__init__(*args)
+  File "C:\Python312\Lib\pathlib.py", line 373, in __init__
+    raise TypeError(
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'

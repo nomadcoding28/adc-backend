@@ -1,0 +1,92 @@
+﻿.\.venv\Scripts\pytest.exe
+ : C:\work\backend\.venv\L
+ib\site-packages\pytest_as
+yncio\plugin.py:208: 
+PytestDeprecationWarning: 
+The configuration option "
+asyncio_default_fixture_lo
+op_scope" is unset.
+At line:1 char:22
++ ... ONPATH="."; .\.venv\
+Scripts\pytest.exe tests/i
+ntegration/test_api_tra 
+...
++                 ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (C  
+  :\work\backend...cope   
+ " is unset.:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+The event loop scope for 
+asynchronous fixtures 
+will default to the 
+fixture caching scope. 
+Future versions of 
+pytest-asyncio will 
+default the loop scope 
+for asynchronous fixtures 
+to function scope. Set 
+the default fixture loop 
+scope explicitly in order 
+to avoid unexpected 
+behavior in the future. 
+Valid fixture loop scopes 
+are: "function", "class", 
+"module", "package", 
+"session"
+
+  warnings.warn(PytestDepr
+ecationWarning(_DEFAULT_FI
+XTURE_LOOP_SCOPE_UNSET))
+============================= test session starts =============================
+platform win32 -- Python 3.12.3, pytest-8.3.3, pluggy-1.6.0 -- C:\work\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\work\backend
+configfile: pyproject.toml
+plugins: anyio-4.13.0, asyncio-0.24.0, cov-5.0.0, mock-3.14.0
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 4 items
+
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_get_training_status PASSED [ 25%]
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_get_training_config PASSED [ 50%]
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_start_training_returns_task FAILED [ 75%]
+tests/integration/test_api_training.py::TestTrainingEndpoints::test_stop_training_when_not_running PASSED [100%]
+
+================================== FAILURES ===================================
+___________ TestTrainingEndpoints.test_start_training_returns_task ____________
+
+self = <test_api_training.TestTrainingEndpoints object at 0x000002B66C1FB950>
+client = <starlette.testclient.TestClient object at 0x000002B66C7C8DD0>
+
+    def test_start_training_returns_task(self, client) -> None:
+        """POST /training/start should accept a training request."""
+        resp = client.post("/training/start", json={
+            "agent_type": "cvar_ppo",
+            "total_timesteps": 10000,
+        })
+        # May return 200 or 202 depending on Celery availability
+>       assert resp.status_code in (200, 202, 409), (
+            f"Unexpected status {resp.status_code}: {resp.text}"
+        )
+E       AssertionError: Unexpected status 500: {"error":"InternalServerError","detail":"Agent initialisation failed: [Errno 2] No such file or directory: 'C:\\\\work\\\\backend\\\\.venv\\\\Lib\\\\site-packages\\\\CybORG\\\\Shared\\\\Scenarios\\\\Scenario2.yaml'","status":500,"path":"/training/start"}
+E       assert 500 in (200, 202, 409)
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests\integration\test_api_training.py:62: AssertionError
+----------------------------- Captured log setup ------------------------------
+WARNING  utils.config_loader:config_loader.py:60 Config env var ${VAR_NAME} not set and no default provided ù keeping placeholder.
+---------------------------- Captured stderr call -----------------------------
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+------------------------------ Captured log call ------------------------------
+ERROR    api.routers.training:training.py:88 Failed to initialise agent: [Errno 2] No such file or directory: 'C:\\\\work\\\\backend\\\\.venv\\\\Lib\\\\site-packages\\\\CybORG\\\\Shared\\\\Scenarios\\\\Scenario2.yaml'\nWARNING  api.access:request_logger.py:57 [3b30ba52] POST /training/start \u2192 500  (4547.0ms)  ip=testclient
+=========================== short test summary info ===========================
+FAILED tests/integration/test_api_training.py::TestTrainingEndpoints::test_start_training_returns_task
+========================= 1 failed, 3 passed in 5.79s =========================

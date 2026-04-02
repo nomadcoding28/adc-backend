@@ -1,0 +1,75 @@
+﻿EEEEEEEEEEEE..........FF                                                 [100%]
+=================================== ERRORS ====================================
+____________ ERROR at setup of TestAlertEndpoints.test_list_alerts ____________
+tests\integration\test_api_alerts.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+____ ERROR at setup of TestAlertEndpoints.test_list_alerts_filter_severity ____
+tests\integration\test_api_alerts.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+_________ ERROR at setup of TestAlertEndpoints.test_get_single_alert __________
+tests\integration\test_api_alerts.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+___ ERROR at setup of TestAlertEndpoints.test_get_missing_alert_returns_404 ___
+tests\integration\test_api_alerts.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+_________ ERROR at setup of TestAlertEndpoints.test_acknowledge_alert _________
+tests\integration\test_api_alerts.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+____________ ERROR at setup of TestAlertEndpoints.test_alert_stats ____________
+tests\integration\test_api_alerts.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+______ ERROR at setup of TestTrainingEndpoints.test_get_training_status _______
+tests\integration\test_api_training.py:19: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+______ ERROR at setup of TestTrainingEndpoints.test_get_training_config _______
+tests\integration\test_api_training.py:19: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+__ ERROR at setup of TestTrainingEndpoints.test_start_training_returns_task ___
+tests\integration\test_api_training.py:19: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+_ ERROR at setup of TestTrainingEndpoints.test_stop_training_when_not_running _
+tests\integration\test_api_training.py:19: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+_______ ERROR at setup of TestWebSocketEndpoints.test_alerts_ws_connect _______
+tests\integration\test_api_ws.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+_________ ERROR at setup of TestWebSocketEndpoints.test_ws_ping_pong __________
+tests\integration\test_api_ws.py:16: in app
+    from api.app import create_app
+E   ModuleNotFoundError: No module named 'api'
+================================== FAILURES ===================================
+______________ TestFullPipeline.test_action_to_explanation_flow _______________
+tests\integration\test_full_pipeline.py:102: in test_action_to_explanation_flow
+    from api.schemas.explain import ExplanationRequest
+E   ModuleNotFoundError: No module named 'api'
+________________ TestFullPipeline.test_game_belief_update_flow ________________
+tests\integration\test_full_pipeline.py:123: in test_game_belief_update_flow
+    from api.schemas.game import BeliefState
+E   ModuleNotFoundError: No module named 'api'
+=========================== short test summary info ===========================
+FAILED tests/integration/test_full_pipeline.py::TestFullPipeline::test_action_to_explanation_flow
+FAILED tests/integration/test_full_pipeline.py::TestFullPipeline::test_game_belief_update_flow
+ERROR tests/integration/test_api_alerts.py::TestAlertEndpoints::test_list_alerts
+ERROR tests/integration/test_api_alerts.py::TestAlertEndpoints::test_list_alerts_filter_severity
+ERROR tests/integration/test_api_alerts.py::TestAlertEndpoints::test_get_single_alert
+ERROR tests/integration/test_api_alerts.py::TestAlertEndpoints::test_get_missing_alert_returns_404
+ERROR tests/integration/test_api_alerts.py::TestAlertEndpoints::test_acknowledge_alert
+ERROR tests/integration/test_api_alerts.py::TestAlertEndpoints::test_alert_stats
+ERROR tests/integration/test_api_training.py::TestTrainingEndpoints::test_get_training_status
+ERROR tests/integration/test_api_training.py::TestTrainingEndpoints::test_get_training_config
+ERROR tests/integration/test_api_training.py::TestTrainingEndpoints::test_start_training_returns_task
+ERROR tests/integration/test_api_training.py::TestTrainingEndpoints::test_stop_training_when_not_running
+ERROR tests/integration/test_api_ws.py::TestWebSocketEndpoints::test_alerts_ws_connect
+ERROR tests/integration/test_api_ws.py::TestWebSocketEndpoints::test_ws_ping_pong
+2 failed, 10 passed, 12 errors in 1.35s

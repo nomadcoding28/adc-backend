@@ -1,0 +1,1 @@
+"""api/routers/ — all FastAPI route handlers."""

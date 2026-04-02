@@ -1,0 +1,54 @@
+﻿========================================================================
+EWC Mathematical Verification ù ACD Framework
+========================================================================
+
+1. Catastrophic Forgetting (No EWC):
+--------------------------------------------------
+  Task A MSE before Task B: 0.003398
+  Task A MSE after  Task B: 11.371555
+  Task B MSE final:         0.003186
+  Forgetting ratio:         3346.9463x
+.\.venv\Scripts\python.exe
+ : Traceback (most recent 
+call last):
+At line:1 char:22
++ ... ONPATH="."; .\.venv\
+Scripts\python.exe 
+tests/verify_ewc_math.py 
+> ewc ...
++                 ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (T  
+  raceback (most recent   
+  call last)::String)     
+[], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+  File "C:\work\backend\te
+sts\verify_ewc_math.py", 
+line 255, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\work\backend\te
+sts\verify_ewc_math.py", 
+line 227, in main
+    print("\n2. With EWC 
+(\u03bb sweep):")
+  File "C:\Python312\Lib\e
+ncodings\cp1252.py", line 
+19, in encode
+    return codecs.charmap_
+encode(input,self.errors,e
+ncoding_table)[0]
+           ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character '\u03bb' 
+in position 15: character 
+maps to <undefined>

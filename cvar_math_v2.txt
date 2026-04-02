@@ -1,0 +1,49 @@
+﻿========================================================================
+CVaR Mathematical Verification - ACD Framework
+========================================================================
+
+1. Gaussian CVaR Verification:
+----------------------------------------
+  N(0.0, 1.0^2) alpha=0.01: empirical=-2.6630  analytical=-2.6652  error=0.0814%  PASS
+  N(0.0, 1.0^2) alpha=0.05: empirical=-2.0678  analytical=-2.0627  error=0.2484%  PASS
+  N(0.0, 1.0^2) alpha=0.10: empirical=-1.7507  analytical=-1.7550  error=0.2434%  PASS
+  N(0.0, 1.0^2) alpha=0.20: empirical=-1.3979  analytical=-1.3998  error=0.1377%  PASS
+  N(10.0, 5.0^2) alpha=0.01: empirical=-3.3347  analytical=-3.3261  error=0.2597%  PASS
+  N(10.0, 5.0^2) alpha=0.05: empirical=-0.2910  analytical=-0.3136  error=7.1886%  PASS
+  N(10.0, 5.0^2) alpha=0.10: empirical=+1.2230  analytical=+1.2251  error=0.1718%  PASS
+  N(10.0, 5.0^2) alpha=0.20: empirical=+2.9892  analytical=+3.0010  error=0.3926%  PASS
+  N(-5.0, 2.0^2) alpha=0.01: empirical=-10.3042  analytical=-10.3304  error=0.2538%  PASS
+  N(-5.0, 2.0^2) alpha=0.05: empirical=-9.1192  analytical=-9.1254  error=0.0688%  PASS
+  N(-5.0, 2.0^2) alpha=0.10: empirical=-8.5191  analytical=-8.5100  error=0.1077%  PASS
+  N(-5.0, 2.0^2) alpha=0.20: empirical=-7.8001  analytical=-7.7996  error=0.0058%  PASS
+
+2. Uniform CVaR Verification:
+----------------------------------------
+  U(0.0, 1.0) alpha=0.01: empirical=+0.0050  analytical=+0.0050  error=0.7034%  PASS
+  U(0.0, 1.0) alpha=0.05: empirical=+0.0251  analytical=+0.0250  error=0.4289%  PASS
+  U(0.0, 1.0) alpha=0.10: empirical=+0.0504  analytical=+0.0500  error=0.7941%  PASS
+  U(0.0, 1.0) alpha=0.20: empirical=+0.1000  analytical=+0.1000  error=0.0334%  PASS
+  U(-10.0, 10.0) alpha=0.01: empirical=-9.8979  analytical=-9.9000  error=0.0214%  PASS
+  U(-10.0, 10.0) alpha=0.05: empirical=-9.5077  analytical=-9.5000  error=0.0814%  PASS
+  U(-10.0, 10.0) alpha=0.10: empirical=-9.0022  analytical=-9.0000  error=0.0239%  PASS
+  U(-10.0, 10.0) alpha=0.20: empirical=-8.0077  analytical=-8.0000  error=0.0960%  PASS
+  U(5.0, 100.0) alpha=0.01: empirical=+5.4864  analytical=+5.4750  error=0.2075%  PASS
+  U(5.0, 100.0) alpha=0.05: empirical=+7.3835  analytical=+7.3750  error=0.1159%  PASS
+  U(5.0, 100.0) alpha=0.10: empirical=+9.7638  analytical=+9.7500  error=0.1416%  PASS
+  U(5.0, 100.0) alpha=0.20: empirical=+14.5524  analytical=+14.5000  error=0.3613%  PASS
+
+3. Alpha-Sensitivity Table (Paper Table 2):
+------------------------------------------------------------
+  Distribution: Bimodal (mean=32.9182, std=23.1503)
+   alpha        CVaR         VaR  Interpretation
+    0.01    -39.1979    -36.8762  Extreme tail - worst 1% (ultra-conservative)
+    0.02    -37.4310    -34.4694  Worst 2% - very conservative
+    0.05    -34.3010    -30.3079  Default alpha - worst 5% (paper setting)
+    0.10    -30.2072     -4.7841  Worst 10% - moderately conservative
+    0.20     -3.7269    +27.7123  Worst 20% - balanced
+    0.50    +18.8023    +38.5825  Worst 50% - median-aware
+    1.00    +32.9182    +80.2582  Full mean - equivalent to standard PPO
+
+========================================================================
+RESULT: ALL TESTS PASSED
+========================================================================

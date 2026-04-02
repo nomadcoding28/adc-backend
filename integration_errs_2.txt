@@ -1,0 +1,66 @@
+﻿........FFss............                                                 [100%]
+================================== FAILURES ===================================
+___________ TestTrainingEndpoints.test_start_training_returns_task ____________
+tests\integration\test_api_training.py:62: in test_start_training_returns_task
+    assert resp.status_code in (200, 202, 409), (
+E   AssertionError: Unexpected status 500: {"error":"InternalServerError","detail":"Agent initialisation failed: No module named 'stable_baselines3'","status":500,"path":"/training/start"}
+E   assert 500 in (200, 202, 409)
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+----------------------------- Captured log setup ------------------------------
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${VAR_NAME} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_URI:bolt://localhost:7687} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_USER:neo4j} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_PASSWORD:password} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_DATABASE:neo4j} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NVD_API_KEY:} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${OPENAI_API_KEY:} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${DATABASE_URL:sqlite+aiosqlite:///./acd.db} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${REDIS_URL:redis://localhost:6379/0} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${CELERY_BROKER_URL:redis://localhost:6379/0} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${CELERY_RESULT_BACKEND:redis://localhost:6379/1} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${ACD_JWT_SECRET:acd-dev-secret-CHANGE-IN-PRODUCTION} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${SENTRY_DSN:} not set ΓÇö keeping placeholder.
+WARNING  api.app:app.py:189 Could not load config.yaml: while scanning a simple key
+  in "<unicode string>", line 115, column 3:
+      p_remove_success:0.85
+      ^
+could not find expected ':'
+  in "<unicode string>", line 116, column 3:
+      breach_penalty:  50.0
+      ^ ΓÇö using defaults.
+------------------------------ Captured log call ------------------------------
+ERROR    api.routers.training:training.py:88 Failed to initialise agent: No module named 'stable_baselines3'
+WARNING  api.access:request_logger.py:57 [0888ac60] POST /training/start ΓåÆ 500  (62.0ms)  ip=testclient
+__________ TestTrainingEndpoints.test_stop_training_when_not_running __________
+tests\integration\test_api_training.py:69: in test_stop_training_when_not_running
+    assert resp.status_code in (200, 409)
+E   assert 405 in (200, 409)
+E    +  where 405 = <Response [405 Method Not Allowed]>.status_code
+----------------------------- Captured log setup ------------------------------
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${VAR_NAME} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_URI:bolt://localhost:7687} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_USER:neo4j} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_PASSWORD:password} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NEO4J_DATABASE:neo4j} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${NVD_API_KEY:} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${OPENAI_API_KEY:} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${DATABASE_URL:sqlite+aiosqlite:///./acd.db} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${REDIS_URL:redis://localhost:6379/0} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${CELERY_BROKER_URL:redis://localhost:6379/0} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${CELERY_RESULT_BACKEND:redis://localhost:6379/1} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${ACD_JWT_SECRET:acd-dev-secret-CHANGE-IN-PRODUCTION} not set ΓÇö keeping placeholder.
+WARNING  utils.config_loader:config_loader.py:73 Config env var ${SENTRY_DSN:} not set ΓÇö keeping placeholder.
+WARNING  api.app:app.py:189 Could not load config.yaml: while scanning a simple key
+  in "<unicode string>", line 115, column 3:
+      p_remove_success:0.85
+      ^
+could not find expected ':'
+  in "<unicode string>", line 116, column 3:
+      breach_penalty:  50.0
+      ^ ΓÇö using defaults.
+------------------------------ Captured log call ------------------------------
+WARNING  api.access:request_logger.py:57 [1c98fe2f] POST /training/stop ΓåÆ 405  (0.0ms)  ip=testclient
+=========================== short test summary info ===========================
+FAILED tests/integration/test_api_training.py::TestTrainingEndpoints::test_start_training_returns_task
+FAILED tests/integration/test_api_training.py::TestTrainingEndpoints::test_stop_training_when_not_running
+2 failed, 20 passed, 2 skipped in 2.23s

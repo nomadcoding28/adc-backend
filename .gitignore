@@ -1,0 +1,104 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.dylib
+*.dll
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+.Python
+
+# Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# pytype
+.pytype/
+
+# pytest
+.pytest_cache/
+
+# coverage
+htmlcov/
+.coverage
+.coverage.*
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+docs/_build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Git data/locks
+*.orig
+*.rej
+
+# Config
+config.yaml
+
+# Model & data checkpoints (data science / RL artifacts)
+data/checkpoints/
+data/embeddings/
+data/experiences/
+data/incidents/
+data/kg_cache/
+
+drift/windows/
+
+envs/**/tmp/
+
+# Docker
+docker-compose.override.yml
+
+# Sensitive credentials
+*.env
+.env.local
+
+# PyCharm
+*.iml
+
+# Dist and test output
+pytest_out.*
+unit_test_results.*
+integration_results.*
+
+# Node (if any frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Snapshots or trained models; keep out of repo
+**/checkpoints/**
+**/models/**
+

@@ -1,0 +1,17 @@
+[project]
+name = "acd-backend"
+version = "0.1.0"
+description = "ACD Framework Backend"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+ignore_missing_imports = true

@@ -1,0 +1,72 @@
+﻿docker : Config env var 
+${VAR_NAME} not set and 
+no default provided ΓÇö 
+keeping placeholder.
+At line:1 char:1
++ docker logs acd-api 
+--tail 100 > dlogs.txt 
+2>&1; Get-Content 
+dlogs.tx ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (C  
+  onfig env var ...ng p   
+ laceholder.:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+INFO:     Started server 
+process [1]
+INFO:     Waiting for 
+application startup.
+No sentence-transformers 
+model found with name sent
+ence-transformers/all-Mini
+LM-L6-v2. Creating a new 
+one with mean pooling.
+Failed to load embedder 
+model: PermissionError at 
+/home/acd when 
+downloading sentence-trans
+formers/all-MiniLM-L6-v2. 
+Check cache directory 
+permissions. Common 
+causes: 1) another user 
+is downloading the same 
+model (please wait); 2) a 
+previous download was 
+canceled and the lock 
+file needs manual removal.
+INFO:     Application 
+startup complete.
+INFO:     Uvicorn running 
+on http://0.0.0.0:8000 
+(Press CTRL+C to quit)
+mkdir -p failed for path /
+home/acd/.config/matplotli
+b: [Errno 13] Permission 
+denied: '/home/acd'
+Matplotlib created a 
+temporary cache directory 
+at 
+/tmp/matplotlib-clhogfkn 
+because there was an 
+issue with the default 
+path (/home/acd/.config/ma
+tplotlib); it is highly 
+recommended to set the 
+MPLCONFIGDIR environment 
+variable to a writable 
+directory, in particular 
+to speed up the import of 
+Matplotlib and to better 
+support multiprocessing.
+Failed to initialise 
+agent: No module named 
+'loguru'
+[1a1e0f75] POST 
+/training/start ΓåÆ 500  
+(1354.2ms)  ip=172.18.0.1
